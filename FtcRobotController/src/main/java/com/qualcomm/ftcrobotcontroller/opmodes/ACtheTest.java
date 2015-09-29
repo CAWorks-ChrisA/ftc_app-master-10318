@@ -20,7 +20,8 @@ public class ACtheTest extends OpMode
 
     @Override
     public void loop() {
-
+        telemetry.addData
+                ( "ACtheGreat", "is the MVP of the day");
     }
     public void update_telemetry ()
     {
