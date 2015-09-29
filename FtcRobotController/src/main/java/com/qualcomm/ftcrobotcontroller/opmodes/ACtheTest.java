@@ -32,3 +32,8 @@ public class ACtheTest extends OpMode
                 ( "ACtheGreat", "is the MVP of the day");
     }//ends update_telemetry, line 28-33 are useless
 }//ends the class ACtheTest
+//just a few notes
+//This is the first program ACtheGreat aka Adam Chen has creaded on Android
+//The purpose of this program is to just send a message back to the driver phone from the robot phone.
+//Copyright ACtheStudios Inc. All rights reserves to ACtheGreat
+//Please do not delete, add, or make ANY changes to this document.
