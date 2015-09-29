@@ -23,7 +23,7 @@ public class ACtheTest extends OpMode
     public void loop() {
         telemetry.addData
                 ( "ACtheGreat", "is the MVP of the day");
-                //this is the loop it will go in after u press start on the driver phone
+                //this is the loop, it will go in after u press start on the driver phone
     }//ends public void loop
     public void update_telemetry ()// this is just a useless command, ignore this statement
     {
