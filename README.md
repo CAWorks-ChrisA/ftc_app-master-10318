@@ -3,6 +3,8 @@ the official one, which GRADLE WORKS, and the app will actually load
 
 YAY, GOT EVERYTHING WORKING!
 
+This is for Green Team's(#10314) robots, Both ACtheGreat and Wchou1006 will contribute on this program!
+
 Copyright ACtheStudios Inc. All Rights Reserved to ACtheGreat
 
 This is the codes that my team TCHS Gold (#10318) will use, and potentially i will release this code to the TCHS Green team too!
