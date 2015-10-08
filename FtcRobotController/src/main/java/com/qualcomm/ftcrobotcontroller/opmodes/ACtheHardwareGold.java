@@ -129,10 +129,7 @@ public class ACtheHardwareGold extends OpMode
         {
             v_motor.setPower (p_left_power);
         }
-        if (v_motor != null)
-        {
-            v_motor.setPower (p_right_power);
-        }
+
 
     } // set_drive_power
 
