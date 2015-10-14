@@ -63,6 +63,7 @@ public class FtcOpModeRegister implements OpModeRegister {
     manager.register ("ACtheTest", ACtheTest.class);
     manager.register ("ACtheHardwareGold" , ACtheHardwareGold.class);
     manager.register ("ACtheServo" , ACtheServo.class);
+    manager.register ("ACtheIRSensor" , ACtheIRSensor.class);
 
     /*
      * Uncomment any of the following lines if you want to register an op mode.
