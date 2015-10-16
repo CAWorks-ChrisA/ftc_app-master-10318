@@ -15,6 +15,10 @@ public class HelloWorld extends OpMode{
     @Override
     public void loop() {
         telemetry.addData ("Hello", "World");
+        
+
+
+
 
     }
 
