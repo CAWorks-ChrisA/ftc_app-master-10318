@@ -10,9 +10,11 @@ import com.qualcomm.robotcore.hardware.DcMotor;
  */
 public class ACtheMotor extends OpMode {
     private DcMotor v_motor;
+    private DcMotor v_motor2;
     @Override
     public void init() {
         v_motor = hardwareMap.dcMotor.get("motor");
+        v_motor2 = hardwareMap.dcMotor.get("motor2");
 
     }
 
@@ -25,6 +27,7 @@ public class ACtheMotor extends OpMode {
             v_motor.setPower (-1.0);
         }
         v_motor.setPower (gamepad1.left_stick_y);
+        v_motor2.setPower (gamepad1.right_stick_y);
 
     }
 }
