@@ -15,6 +15,7 @@ public class ACtheMotor extends OpMode {
     public void init() {
         v_motorleft = hardwareMap.dcMotor.get("motor");
         v_motorright = hardwareMap.dcMotor.get("motor2");
+        v_motorleft.setDirection(DcMotor.Direction.REVERSE);
 
 
     }
