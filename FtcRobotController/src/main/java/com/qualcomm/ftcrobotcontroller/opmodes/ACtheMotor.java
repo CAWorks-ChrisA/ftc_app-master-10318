@@ -15,19 +15,14 @@ public class ACtheMotor extends OpMode {
     public void init() {
         v_motorleft = hardwareMap.dcMotor.get("motor");
         v_motorright = hardwareMap.dcMotor.get("motor2");
-        v_motorleft.setDirection(DcMotor.Direction.REVERSE);
+        v_motorright.setDirection(DcMotor.Direction.REVERSE);
 
 
     }
 
     @Override
     public void loop() {
-        if (gamepad1.a){
-            v_motorleft.setPower (1.0);
-        }
-        if (gamepad1.b) {
-            v_motorleft.setPower (-1.0);
-        }
+
         v_motorleft.setPower (gamepad1.left_stick_y);
         v_motorright.setPower (gamepad1.right_stick_y);
 
