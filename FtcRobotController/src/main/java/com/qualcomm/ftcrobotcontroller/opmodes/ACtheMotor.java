@@ -11,11 +11,18 @@ import com.qualcomm.robotcore.hardware.DcMotor;
 public class ACtheMotor extends OpMode {
     private DcMotor v_motorleft;
     private DcMotor v_motorright;
+    private DcMotor v_motorbkleft;
+    private DcMotor v_motorbkright;
+    
     @Override
     public void init() {
         v_motorleft = hardwareMap.dcMotor.get("motor");
         v_motorright = hardwareMap.dcMotor.get("motor2");
-        v_motorright.setDirection(DcMotor.Direction.REVERSE);
+        v_motorbkleft = hardwareMap.dcMotor.get("motor3");
+        v_motorbkright = hardwareMap.dcMotor.get("motor4");
+        v_motorleft.setDirection(DcMotor.Direction.REVERSE);
+        v_motorleft.setDirection(DcMotor.Direction.REVERSE);
+
 
 
     }
@@ -25,6 +32,8 @@ public class ACtheMotor extends OpMode {
 
         v_motorleft.setPower (gamepad1.left_stick_y);
         v_motorright.setPower (gamepad1.right_stick_y);
+        v_motorbkleft.setPower (gamepad1.left_stick_y);
+        v_motorbkright.setPower (gamepad1.right_stick_y);
 
     }
 }
