@@ -24,7 +24,7 @@ public class ACtheMotor extends OpMode {
         v_motorbkright = hardwareMap.dcMotor.get("motor4");
         v_servo = hardwareMap.servo.get("servo");
         v_motorleft.setDirection(DcMotor.Direction.REVERSE);
-        v_motorleft.setDirection(DcMotor.Direction.REVERSE);
+        v_motorbkleft.setDirection(DcMotor.Direction.REVERSE);
         v_servo.setPosition (Servo.MAX_POSITION);
 
 
