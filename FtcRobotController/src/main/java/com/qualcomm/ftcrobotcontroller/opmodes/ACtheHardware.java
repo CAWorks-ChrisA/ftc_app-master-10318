@@ -1,0 +1,58 @@
+package com.qualcomm.ftcrobotcontroller.opmodes;
+
+import com.qualcomm.robotcore.eventloop.opmode.OpMode;
+import com.qualcomm.robotcore.hardware.DcMotor;
+
+/**
+ * Created by Administrator on 2015/10/28.
+ */
+public class ACtheHardware  extends OpMode{
+
+    //defining the variables:
+
+    DcMotor ac_motorleft;
+    DcMotor ac_motorright;
+    DcMotor ac_motorbkleft;
+    DcMotor ac_motorbkright;
+
+    @Override
+    public void init() {
+        //assigning the variables to their motors
+        ac_motorleft = hardwareMap.dcMotor.get ("motorleft");
+        ac_motorright = hardwareMap.dcMotor.get("motorright");
+        ac_motorbkleft = hardwareMap.dcMotor.get("motorbkleft");
+        ac_motorbkright = hardwareMap.dcMotor.get("motorbkright");
+
+    }
+    @Override public void start ()
+
+    {
+        //
+        // Only actions that are common to all Op-Modes (i.e. both automatic and
+        // manual) should be implemented here.
+        //
+        // This method is designed to be overridden.
+        //
+
+    } // start
+
+    @Override
+    public void loop() {
+        //nothing here.
+
+    }
+    @Override public void stop ()
+    {
+        //
+        // Nothing needs to be done for this method.
+        //
+
+    } // stop
+     public void telemetry_update()
+    {
+        telemetry.addData("left drive stick" , +gamepad1.left_stick_y);
+        telemetry.addData("right drive stick" , +gamepad1.right_stick_y);
+
+
+    }
+}

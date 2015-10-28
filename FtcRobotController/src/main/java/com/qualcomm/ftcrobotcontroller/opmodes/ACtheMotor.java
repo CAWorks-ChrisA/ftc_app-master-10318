@@ -14,18 +14,17 @@ public class ACtheMotor extends OpMode {
     private DcMotor v_motorright;
     private DcMotor v_motorbkleft;
     private DcMotor v_motorbkright;
-    private Servo v_servo;
 
     @Override
     public void init() {
-        v_motorleft = hardwareMap.dcMotor.get("motor");
-        v_motorright = hardwareMap.dcMotor.get("motor2");
-        v_motorbkleft = hardwareMap.dcMotor.get("motor3");
-        v_motorbkright = hardwareMap.dcMotor.get("motor4");
-        v_servo = hardwareMap.servo.get("servo");
+        v_motorleft = hardwareMap.dcMotor.get("motorleft");
+        v_motorright = hardwareMap.dcMotor.get("motorright");
+        v_motorbkleft = hardwareMap.dcMotor.get("motorbkleft");
+        v_motorbkright = hardwareMap.dcMotor.get("motorbkright");
+
         v_motorleft.setDirection(DcMotor.Direction.REVERSE);
         v_motorbkleft.setDirection(DcMotor.Direction.REVERSE);
-        v_servo.setPosition (Servo.MAX_POSITION);
+
 
 
 
@@ -39,16 +38,10 @@ public class ACtheMotor extends OpMode {
         v_motorbkleft.setPower (gamepad1.left_stick_y);
         v_motorbkright.setPower (gamepad1.right_stick_y);
 
-        if (gamepad2.a )
-        {
-            v_servo.setPosition (Servo.MIN_POSITION);
-        }
-        if(gamepad2.b){
-            v_servo.setPosition (Servo.MAX_POSITION);
-        }
+
         telemetry.addData ("left stick" , +gamepad1.left_stick_y);
         telemetry.addData ("right stick" , +gamepad1.right_stick_y);
-        telemetry.addData ("servo position" , +v_servo.getPosition ());
+
 
     }
 }
