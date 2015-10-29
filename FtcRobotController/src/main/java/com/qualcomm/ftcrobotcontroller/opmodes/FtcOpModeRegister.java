@@ -64,6 +64,8 @@ public class FtcOpModeRegister implements OpModeRegister {
     manager.register ("ACtheServo" , ACtheServo.class);
     manager.register ("ACtheIRSensor" , ACtheIRSensor.class);
     manager.register ("ACtheMotor" , ACtheMotor.class);
+    manager.register ("ACtheAutonomous", ACtheAutonomous.class);
+    manager.register ("ACtheTeleOp", ACtheTeleOp.class);
 
 
     /*

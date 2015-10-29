@@ -18,10 +18,32 @@ public class ACtheHardware  extends OpMode{
     @Override
     public void init() {
         //assigning the variables to their motors
-        ac_motorleft = hardwareMap.dcMotor.get ("motorleft");
-        ac_motorright = hardwareMap.dcMotor.get("motorright");
-        ac_motorbkleft = hardwareMap.dcMotor.get("motorbkleft");
-        ac_motorbkright = hardwareMap.dcMotor.get("motorbkright");
+        try {ac_motorleft = hardwareMap.dcMotor.get ("motorleft");}
+        catch (Exception p_exeception){
+            ac_motorleft = null;
+            telemetry.addData ("ERROR", " motorleft (front) not detected  ):  ");
+        }
+        try {ac_motorright = hardwareMap.dcMotor.get("motorright");}
+        catch (Exception p_exception){
+            ac_motorright = null;
+            telemetry.addData ("'ERROR", "motorright (front) not detected  ):  ");
+        }
+
+        try {ac_motorbkleft = hardwareMap.dcMotor.get("motorbkleft");}
+        catch (Exception p_exception){
+            ac_motorbkleft = null;
+            telemetry.addData ("ERROR", "motorbkleft not detected  ):  " );
+
+        }
+        try {
+        ac_motorbkright = hardwareMap.dcMotor.get("motorbkright");}
+        catch (Exception p_exception){
+            ac_motorbkright = null;
+            telemetry.addData("Error", "motorbkright not detected  ):  ");
+        }
+        ac_motorright.setDirection(DcMotor.Direction.REVERSE);
+        ac_motorbkright.setDirection(DcMotor.Direction.REVERSE);
+
 
     }
     @Override public void start ()
