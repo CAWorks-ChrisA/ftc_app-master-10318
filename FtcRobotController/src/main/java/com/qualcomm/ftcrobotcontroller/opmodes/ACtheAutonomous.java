@@ -14,7 +14,7 @@ public class ACtheAutonomous  extends ACtheHardware
 
         switch (ac_state) {
             case 0:
-                set_drive_power(1.0, 1.0);
+                set_drive_power(-1.0, -1.0);
                 new ACtheCounter (2);
                 ac_state++;
                 break;
