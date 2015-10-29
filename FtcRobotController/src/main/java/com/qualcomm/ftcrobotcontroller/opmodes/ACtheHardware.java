@@ -77,4 +77,10 @@ public class ACtheHardware  extends OpMode{
 
 
     }
+    public void set_drive_power (double lt , double rt){
+        ac_motorleft.setPower (lt);
+        ac_motorright.setPower (rt);
+        ac_motorbkleft.setPower (lt);
+        ac_motorbkright.setPower (rt);
+    }
 }
