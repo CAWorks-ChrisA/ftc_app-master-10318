@@ -38,5 +38,5 @@ v_servo= hardwareMap.servo.get("servo1")
         if (gamepad1.b){
         v_servo.setPosition(Servo. MIN_POSITION);}
 
-        
+
     }
