@@ -10,5 +10,6 @@ public class ACtheTeleOp  extends ACtheHardware {
         ac_motorright.setPower (gamepad1.right_stick_y);
         ac_motorbkleft.setPower (gamepad1.left_stick_y);
         ac_motorbkright.setPower (gamepad1.right_stick_y);
+        telemetry_update();
     }
 }
