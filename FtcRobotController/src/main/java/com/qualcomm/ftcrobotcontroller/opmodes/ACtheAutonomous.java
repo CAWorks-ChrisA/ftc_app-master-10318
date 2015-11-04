@@ -18,6 +18,8 @@ public class ACtheAutonomous  extends ACtheHardware
                 new ACtheCounter (2);
                 ac_state++;
                 break;
+            case 1:
+
             default:
                 //
                 // The autonomous actions have been accomplished (i.e. the state has
