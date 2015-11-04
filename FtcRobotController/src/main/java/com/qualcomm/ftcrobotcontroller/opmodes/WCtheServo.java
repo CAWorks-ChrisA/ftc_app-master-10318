@@ -9,7 +9,7 @@ import com.qualcomm.robotcore.hardware.Servo;
 public class WCtheServo extends OpMode {
 
     Servo v_servo;
-//gives the servo a name 
+//gives the servo a name
     @Override
 
     public void init() {
