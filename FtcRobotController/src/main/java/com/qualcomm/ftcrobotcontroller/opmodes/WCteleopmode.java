@@ -12,7 +12,7 @@ DcMotor leftMotor;
     @Override
     public void init() {
         leftMotor= hardwareMap.dcMotor.get("left_drive");
-        rightMotor= hardwareMap.dcMotor.get("rigt_drive");
+        rightMotor= hardwareMap.dcMotor.get("right_drive");
 
         rightMotor.setDirection (DcMotor.Direction.REVERSE);
     }
@@ -24,6 +24,6 @@ DcMotor leftMotor;
 
         leftMotor.setPower(leftY);
         rightMotor.setPower(rightY);
-        
+
     }
 }
