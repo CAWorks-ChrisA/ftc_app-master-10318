@@ -2,6 +2,8 @@ package com.qualcomm.ftcrobotcontroller.opmodes;
 
 import com.qualcomm.robotcore.eventloop.opmode.OpMode;
 import com.qualcomm.robotcore.hardware.DcMotor;
+import com.qualcomm.robotcore.hardware.OpticalDistanceSensor;
+import com.qualcomm.robotcore.hardware.TouchSensor;
 
 /**
  * Created by Administrator on 2015/10/28.
@@ -14,6 +16,8 @@ public class ACtheHardware  extends OpMode{
     DcMotor ac_motorright;
     DcMotor ac_motorbkleft;
     DcMotor ac_motorbkright;
+    OpticalDistanceSensor ac_ods;
+    TouchSensor ac_touch;
 
     @Override
     public void init() {
@@ -41,6 +45,21 @@ public class ACtheHardware  extends OpMode{
             ac_motorbkright = null;
             telemetry.addData("Error", "motorbkright not detected  ):  ");
         }
+        try {
+            ac_ods = hardwareMap.opticalDistanceSensor.get ("ods");
+        }
+        catch (Exception p_exception){
+            ac_ods = null;
+            telemetry.addData("Error", "optical distance sensor (ods) not detected  ):  ");
+        }
+        try {
+            ac_touch = hardwareMap.touchSensor.get ("touch");
+        }
+        catch (Exception p_exception){
+            ac_touch = null;
+            telemetry.addData("Error", "touch sensor (touch) not detected  ):  ");
+        }
+
         ac_motorright.setDirection(DcMotor.Direction.REVERSE);
         ac_motorbkright.setDirection(DcMotor.Direction.REVERSE);
 
@@ -74,6 +93,8 @@ public class ACtheHardware  extends OpMode{
     {
         telemetry.addData("left drive stick" , +gamepad1.left_stick_y);
         telemetry.addData("right drive stick" , +gamepad1.right_stick_y);
+        telemetry.addData ("touch sensor", ac_touch.isPressed());
+        telemetry.addData ("Optical Distance", ac_ods.getLightDetected());
 
 
     }
