@@ -1,5 +1,7 @@
 package com.qualcomm.ftcrobotcontroller.opmodes;
 
+import com.qualcomm.hardware.ModernRoboticsOpticalDistanceSensor;
+import com.qualcomm.hardware.ModernRoboticsTouchSensor;
 import com.qualcomm.robotcore.eventloop.opmode.OpMode;
 import com.qualcomm.robotcore.hardware.DcMotor;
 
@@ -12,6 +14,8 @@ public class WChardware extends OpMode {
     DcMotor rightMotor;
     DcMotor leftBMotor;
     DcMotor rightBMotor;
+    ModernRoboticsOpticalDistanceSensor distanceSensor;
+    ModernRoboticsTouchSensor touchSensor;
     @Override
     public void init() {
 
