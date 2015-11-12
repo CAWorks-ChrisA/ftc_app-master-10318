@@ -1,8 +1,10 @@
 package com.qualcomm.ftcrobotcontroller.opmodes;
 
 import com.qualcomm.robotcore.eventloop.opmode.OpMode;
+import com.qualcomm.robotcore.hardware.ColorSensor;
 import com.qualcomm.robotcore.hardware.DcMotor;
 import com.qualcomm.robotcore.hardware.OpticalDistanceSensor;
+import com.qualcomm.robotcore.hardware.Servo;
 import com.qualcomm.robotcore.hardware.TouchSensor;
 
 /**
@@ -12,12 +14,15 @@ public class ACtheHardware  extends OpMode{
 
     //defining the variables:
 
-    DcMotor ac_motorleft;
-    DcMotor ac_motorright;
-    DcMotor ac_motorbkleft;
-    DcMotor ac_motorbkright;
-    OpticalDistanceSensor ac_ods;
-    TouchSensor ac_touch;
+     DcMotor ac_motorleft;
+     DcMotor ac_motorright;
+     DcMotor ac_motorbkleft;
+     DcMotor ac_motorbkright;
+     OpticalDistanceSensor ac_ods;
+     TouchSensor ac_touch;
+     ColorSensor ac_color;
+     Servo ac_servo;
+
 
     @Override
     public void init() {
@@ -59,9 +64,24 @@ public class ACtheHardware  extends OpMode{
             ac_touch = null;
             telemetry.addData("Error", "touch sensor (touch) not detected  ):  ");
         }
+        try {
+            ac_color = hardwareMap.colorSensor.get ("color");
+        }
+        catch (Exception p_exception){
+            ac_color = null;
+            telemetry.addData ("Error", "color not detected  ):  ");
+        }
+        try {
+            ac_servo = hardwareMap.servo.get ("servo");
+        }
+        catch (Exception p_exception){
+            ac_servo =  null;
+            telemetry.addData ("Error", "servo not detected ):");
+        }
 
-        ac_motorright.setDirection(DcMotor.Direction.REVERSE);
-        ac_motorbkright.setDirection(DcMotor.Direction.REVERSE);
+
+        ac_motorleft.setDirection(DcMotor.Direction.REVERSE);
+        ac_motorbkleft.setDirection(DcMotor.Direction.REVERSE);
 
 
     }
@@ -95,6 +115,9 @@ public class ACtheHardware  extends OpMode{
         telemetry.addData("right drive stick" , +gamepad1.right_stick_y);
         telemetry.addData ("touch sensor", ac_touch.isPressed());
         telemetry.addData ("Optical Distance", ac_ods.getLightDetected());
+        telemetry.addData ("Color.Red", +ac_color.red());
+        telemetry.addData ("Color.Green", +ac_color.green());
+        telemetry.addData ("Color.Blue", +ac_color.blue());
 
 
     }

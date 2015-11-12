@@ -1,5 +1,7 @@
 package com.qualcomm.ftcrobotcontroller.opmodes;
 
+import com.qualcomm.robotcore.hardware.Servo;
+
 /**
  * Created by Administrator on 2015/10/28.
  */
@@ -19,6 +21,15 @@ public class ACtheAutonomous  extends ACtheHardware
                 ac_state++;
                 break;
             case 1:
+                if ( ac_color.red() == 255){
+                    ac_servo.setPosition (Servo.MAX_POSITION);
+
+                }
+                else {
+                    ac_servo.setPosition (Servo.MIN_POSITION);
+                }
+                new ACtheCounter(5);
+                ac_state++;
                 break;
 
             default:
