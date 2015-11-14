@@ -80,8 +80,8 @@ public class ACtheHardware  extends OpMode{
         }
 
 
-        ac_motorleft.setDirection(DcMotor.Direction.REVERSE);
-        ac_motorbkleft.setDirection(DcMotor.Direction.REVERSE);
+        if (ac_motorleft != null){ac_motorleft.setDirection(DcMotor.Direction.REVERSE);}
+        if (ac_motorbkright != null){ac_motorbkleft.setDirection(DcMotor.Direction.REVERSE);}
 
 
     }
