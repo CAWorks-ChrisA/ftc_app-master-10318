@@ -18,9 +18,10 @@ public class ACtheHardware  extends OpMode{
      DcMotor ac_motorright;
      DcMotor ac_motorbkleft;
      DcMotor ac_motorbkright;
+     DcMotor ac_debris;
      OpticalDistanceSensor ac_ods;
      TouchSensor ac_touch;
-     ColorSensor ac_color;
+     //ColorSensor ac_color;
      Servo ac_servo;
 
 
@@ -64,19 +65,26 @@ public class ACtheHardware  extends OpMode{
             ac_touch = null;
             telemetry.addData("Error", "touch sensor (touch) not detected  ):  ");
         }
-        try {
-            ac_color = hardwareMap.colorSensor.get ("color");
-        }
-        catch (Exception p_exception){
-            ac_color = null;
-            telemetry.addData ("Error", "color not detected  ):  ");
-        }
+       // try {
+       //     ac_color = hardwareMap.colorSensor.get ("color");
+        //}
+        //catch (Exception p_exception){
+         //   ac_color = null;
+          //  telemetry.addData ("Error", "color not detected  ):  ");
+        //}
         try {
             ac_servo = hardwareMap.servo.get ("servo");
         }
         catch (Exception p_exception){
             ac_servo =  null;
             telemetry.addData ("Error", "servo not detected ):");
+        }
+        try {
+            ac_debris = hardwareMap.dcMotor.get("debris");
+        }
+        catch (Exception p_exception){
+            ac_debris = null;
+            telemetry.addData("Error", "debris motor (debrie) not detected ):");
         }
 
 
@@ -115,9 +123,9 @@ public class ACtheHardware  extends OpMode{
         telemetry.addData("right drive stick" , +gamepad1.right_stick_y);
         telemetry.addData ("touch sensor", ac_touch.isPressed());
         telemetry.addData ("Optical Distance", ac_ods.getLightDetected());
-        telemetry.addData ("Color.Red", +ac_color.red());
-        telemetry.addData ("Color.Green", +ac_color.green());
-        telemetry.addData ("Color.Blue", +ac_color.blue());
+        //telemetry.addData ("Color.Red", +ac_color.red());
+        //telemetry.addData ("Color.Green", +ac_color.green());
+        //telemetry.addData ("Color.Blue", +ac_color.blue());
 
 
     }
