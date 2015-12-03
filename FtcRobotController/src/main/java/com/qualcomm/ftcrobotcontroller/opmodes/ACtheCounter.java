@@ -18,9 +18,11 @@ public class ACtheCounter extends ACtheHardware{
 
     class RemindTask extends TimerTask {
         public void run() {
-            set_drive_power( 0.0, 0.0);
-            ac_servo.setPosition (Servo.MIN_POSITION);
+            set_drive_power(0.0, 0.0);
+            ac_servo.setPosition(Servo.MIN_POSITION);
+            running--;
             timer.cancel(); //Terminate the timer thread
+
         }
     }
 }

@@ -2,14 +2,15 @@ package com.qualcomm.ftcrobotcontroller.opmodes;
 
 import com.qualcomm.robotcore.eventloop.opmode.OpMode;
 import com.qualcomm.robotcore.hardware.DcMotor;
-import com.qualcomm.robotcore.hardware.Servo;
 
 /**
  * Created by ACtheGreat on 10/19/2015.
  * Copyright ACtheStudios Inc.
  * All Rights Reserved to ACtheGreat.
  */
-public class ACtheMotor extends OpMode {
+public class
+
+        ACtheMotor extends OpMode {
     private DcMotor v_motorleft;
     private DcMotor v_motorright;
     private DcMotor v_motorbkleft;
@@ -34,7 +35,8 @@ public class ACtheMotor extends OpMode {
     public void loop() {
 
         v_motorleft.setPower (gamepad1.left_stick_y);
-        v_motorright.setPower (gamepad1.right_stick_y);
+
+
         v_motorbkleft.setPower (gamepad1.left_stick_y);
         v_motorbkright.setPower (gamepad1.right_stick_y);
 

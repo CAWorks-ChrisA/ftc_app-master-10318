@@ -18,10 +18,13 @@ public class ACtheHardware  extends OpMode{
      DcMotor ac_motorright;
      DcMotor ac_motorbkleft;
      DcMotor ac_motorbkright;
+     DcMotor ac_debrislift;
+     DcMotor ac_debrisdump;
      OpticalDistanceSensor ac_ods;
      TouchSensor ac_touch;
      ColorSensor ac_color;
      Servo ac_servo;
+     public static int running;
 
 
     @Override
@@ -78,6 +81,18 @@ public class ACtheHardware  extends OpMode{
             ac_servo =  null;
             telemetry.addData ("Error", "servo not detected ):");
         }
+        try{
+            ac_debrislift = hardwareMap.dcMotor.get("lift");
+        }
+        catch (Exception p_exception){
+            ac_debrislift = null;
+        }
+        try{
+            ac_debrisdump = hardwareMap.dcMotor.get("dump");
+        }
+        catch (Exception p_exception){
+            ac_debrisdump = null;
+        }
 
 
         ac_motorleft.setDirection(DcMotor.Direction.REVERSE);
@@ -127,4 +142,5 @@ public class ACtheHardware  extends OpMode{
         ac_motorbkleft.setPower (lt);
         ac_motorbkright.setPower (rt);
     }
+
 }
