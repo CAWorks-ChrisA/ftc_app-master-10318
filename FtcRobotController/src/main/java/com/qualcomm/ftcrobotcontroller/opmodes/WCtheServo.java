@@ -6,7 +6,7 @@ import com.qualcomm.robotcore.hardware.Servo;
 /**
  * Created by Wesley Chou on 10/28/2015.
  */
-public class WCtheServo extends OpMode {
+public class TCHSServo extends OpMode {
 
     Servo v_servo;
 //gives the servo a name

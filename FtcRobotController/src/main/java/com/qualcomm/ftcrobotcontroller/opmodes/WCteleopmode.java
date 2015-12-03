@@ -5,7 +5,7 @@ import com.qualcomm.robotcore.hardware.DcMotor;
 /**
  * Created by Wesley Chou TCHS Robotics on 11/3/2015.
  */
-public class WCteleopmode extends OpMode {
+public class TCHSteleopmode extends OpMode {
 DcMotor leftMotor;
     DcMotor rightMotor;
 
