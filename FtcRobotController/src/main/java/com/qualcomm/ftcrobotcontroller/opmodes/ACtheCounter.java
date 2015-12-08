@@ -9,9 +9,9 @@ import java.util.TimerTask;
 public class ACtheCounter extends ACtheHardware{
     Timer timer;
 
-    public ACtheCounter(int seconds) {
+    public ACtheCounter(int miliseconds) {
         timer = new Timer();
-        timer.schedule(new RemindTask(), seconds * 1000);
+        timer.schedule(new RemindTask(), miliseconds);
     }
 
     class RemindTask extends TimerTask {

@@ -2,7 +2,6 @@ package com.qualcomm.ftcrobotcontroller.opmodes;
 
 import com.qualcomm.robotcore.eventloop.opmode.OpMode;
 import com.qualcomm.robotcore.hardware.DcMotor;
-import com.qualcomm.robotcore.hardware.OpticalDistanceSensor;
 
 /**
  * Created by Administrator on 2015/10/28.
@@ -17,11 +16,11 @@ public class ACtheHardware  extends OpMode{
      DcMotor ac_motorbkright;
      DcMotor ac_debrislift;
      DcMotor ac_debrisdump;
-     OpticalDistanceSensor ac_ods;
+     //OpticalDistanceSensor ac_ods;
      //TouchSensor ac_touch;
      //ColorSensor ac_color;
      //Servo ac_servo;
-     DcMotor ac_flipper;
+     //DcMotor ac_flipper;
      public static int running;
 
 
@@ -51,13 +50,13 @@ public class ACtheHardware  extends OpMode{
             ac_motorbkright = null;
             telemetry.addData("Error", "motorbkright not detected  ):  ");
         }
-        try {
-            ac_ods = hardwareMap.opticalDistanceSensor.get ("ods");
-        }
-        catch (Exception p_exception){
-            ac_ods = null;
-            telemetry.addData("Error", "optical distance sensor (ods) not detected  ):  ");
-        }
+        //try {
+        //    ac_ods = hardwareMap.opticalDistanceSensor.get ("ods");
+        //}
+        //catch (Exception p_exception){
+        //    ac_ods = null;
+        //    telemetry.addData("Error", "optical distance sensor (ods) not detected  ):  ");
+        //}
         //try {
         //    ac_touch = hardwareMap.touchSensor.get ("touch");
         //}
@@ -91,12 +90,12 @@ public class ACtheHardware  extends OpMode{
         catch (Exception p_exception){
             ac_debrisdump = null;
         }
-        try{
-            ac_flipper = hardwareMap.dcMotor.get("flipper");
-        }
-        catch (Exception p_exception){
-            ac_flipper = null;
-        }
+        //try{
+        //    ac_flipper = hardwareMap.dcMotor.get("flipper");
+        //}
+        //catch (Exception p_exception){
+        //    ac_flipper = null;
+        //}
 
 
         ac_motorleft.setDirection(DcMotor.Direction.REVERSE);
@@ -133,7 +132,7 @@ public class ACtheHardware  extends OpMode{
         telemetry.addData("left drive stick" , +gamepad1.left_stick_y);
         telemetry.addData("right drive stick" , +gamepad1.right_stick_y);
         //telemetry.addData ("touch sensor", ac_touch.isPressed());
-        telemetry.addData ("Optical Distance", ac_ods.getLightDetected());
+       // telemetry.addData ("Optical Distance", ac_ods.getLightDetected());
         //telemetry.addData ("Color.Red", +ac_color.red());
         //telemetry.addData ("Color.Green", +ac_color.green());
         //telemetry.addData ("Color.Blue", +ac_color.blue());
