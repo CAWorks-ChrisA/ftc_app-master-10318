@@ -21,7 +21,8 @@ public class ACtheHardware  extends OpMode{
      //ColorSensor ac_color;
      //Servo ac_servo;
      //DcMotor ac_flipper;
-     public static int running;
+     public static synchronized int running(){return c;}
+    public static int c;
 
 
     @Override
@@ -145,5 +146,12 @@ public class ACtheHardware  extends OpMode{
         ac_motorbkleft.setPower (lt);
         ac_motorbkright.setPower (rt);
     }
+    public synchronized void runningon(){
+        c++;
+    }
+    public synchronized void runningoff(){
+        c--;
+    }
+
 
 }

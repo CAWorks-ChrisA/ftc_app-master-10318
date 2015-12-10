@@ -18,7 +18,7 @@ public class ACtheCounter extends ACtheHardware{
         public void run() {
             set_drive_power(0.0, 0.0);
             //ac_servo.setPosition(Servo.MIN_POSITION);
-            running--;
+            runningoff();
             timer.cancel(); //Terminate the timer thread
 
         }
