@@ -5,6 +5,9 @@ package com.qualcomm.ftcrobotcontroller.opmodes;
  */
 public class ACtheAutoTime extends ACtheHardware{
     @Override public void loop(){
+        //OK, this is ACtheGreat, fwd speed: 1.25 per 2 ft. turning speed.. ?
+        // Tast for Wesley, test for turning speed:
+        // last time, last result was 0.9 sec for 95-100 degrees, and please, test 0.8-0.85 seconds
         if (this.time > 1 && this.time<= 2.25 ){
             set_drive_power(1.0, 1.0);
         }
