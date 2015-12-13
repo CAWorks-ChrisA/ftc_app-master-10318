@@ -1,5 +1,7 @@
 package com.qualcomm.ftcrobotcontroller.opmodes;
 
+import com.qualcomm.hardware.ModernRoboticsOpticalDistanceSensor;
+import com.qualcomm.hardware.ModernRoboticsTouchSensor;
 import com.qualcomm.robotcore.eventloop.opmode.OpMode;
 import com.qualcomm.robotcore.hardware.DcMotor;
 import com.qualcomm.robotcore.hardware.HardwareMap;
@@ -16,6 +18,12 @@ public class TCHSHardware extends OpMode
 
     DcMotor leftMotor;
     DcMotor rightMotor;
+<<<<<<< HEAD
+    DcMotor leftBMotor;
+    DcMotor rightBMotor;
+    ModernRoboticsOpticalDistanceSensor distanceSensor;
+    ModernRoboticsTouchSensor touchSensor;
+=======
     DcMotor leftBackMotor;
     DcMotor rightBackMotor;
     DcMotor conveyerBelt;
@@ -27,6 +35,7 @@ public class TCHSHardware extends OpMode
     Servo servo3;
     Servo servo4;
     // defining the hardware on our robot also, we have varibles to name the motors, sensors, and servos.
+>>>>>>> origin/Green-V0.0.1-Alpha
     @Override
     public void init() {
         //over here, we are detecting if the motors are detected. If its is not detected, a message gets sent to the phone
