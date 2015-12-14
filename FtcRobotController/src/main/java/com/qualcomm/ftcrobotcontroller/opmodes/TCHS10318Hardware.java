@@ -25,89 +25,110 @@ public class TCHS10318Hardware extends OpMode {
     // defining the hardware on our robot also, we have varibles to name the motors, sensors, and servos.
     @Override
     public void init() {
-        //over here, we are detecting if the motors are detected. If its is not detected, a message gets sent to the phone
-        try {
+        try {   //"try" when the phone sends a message to the core motor controller.
             leftMotor = hardwareMap.dcMotor.get("motorleft");
-        } catch (Exception p_exeception) {
+        }
+        catch (Exception p_exeception) {
+            //if the motor is not detected, the telemetry will send information back to the phone saying the motor is not detected
             leftMotor = null;
             telemetry.addData("ERROR", " left motor not detected  ):  ");
         }
+        //repeat the same concept for all the other motors, sensors, and servos
         try {
             rightMotor = hardwareMap.dcMotor.get("motorleft");
-        } catch (Exception p_exeception) {
+        }
+        catch (Exception p_exeception) {
             rightMotor = null;
             telemetry.addData("ERROR", " right motor not detected  ):  ");
         }
+        //left back motor
         try {
             leftBackMotor = hardwareMap.dcMotor.get("motorleft");
-        } catch (Exception p_exeception) {
+        }
+        catch (Exception p_exeception) {
             leftBackMotor = null;
             telemetry.addData("ERROR", " left back motor not detected  ):  ");
         }
+        // right back motor
         try {
             rightBackMotor = hardwareMap.dcMotor.get("motorleft");
-        } catch (Exception p_exeception) {
+        }
+        catch (Exception p_exeception) {
             rightBackMotor = null;
             telemetry.addData("ERROR", " right back motor not detected  ):  ");
         }
+        // bucket system
         try {
             bucket = hardwareMap.dcMotor.get("motorleft");
-        } catch (Exception p_exeception) {
+        }
+        catch (Exception p_exeception) {
             bucket = null;
             telemetry.addData("ERROR", " bucket not detected  ):  ");
         }
+        //conveyer belt system
         try {
             conveyerBelt = hardwareMap.dcMotor.get("motorleft");
-        } catch (Exception p_exeception) {
+        }
+        catch (Exception p_exeception) {
             conveyerBelt = null;
             telemetry.addData("ERROR", " convyerbelt not detected  ):  ");
         }
+        // servo 1
         try {
             servo1 = hardwareMap.servo.get("servo1");
-        } catch (Exception p_exception) {
+        }
+        catch (Exception p_exception) {
             servo1 = null;
             telemetry.addData("ERROR", "servo1 not detected ): ");
         }
+        // servo 2
         try {
             servo2 = hardwareMap.servo.get("servo2");
-        } catch (Exception p_exception) {
+        }
+        catch (Exception p_exception) {
             servo2 = null;
             telemetry.addData("ERROR", "servo2 not detected ): ");
         }
+        // servo 3
         try {
             servo3 = hardwareMap.servo.get("servo3");
-        } catch (Exception p_exception) {
+        }
+        catch (Exception p_exception) {
             servo3 = null;
             telemetry.addData("ERROR", "servo3 not detected ): ");
 
         }
+        // servo 4
         try {
             servo4 = hardwareMap.servo.get("servo 4");
-        } catch (Exception p_exception) {
+        }
+        catch (Exception p_exception) {
             servo4 = null;
             telemetry.addData("ERROR", "servo4 not detected ):");
         }
+        // servo 5
         try {
             bucket = hardwareMap.dcMotor.get("bucket motor");
-        } catch (Exception p_exception) {
+        }
+        catch (Exception p_exception) {
             bucket = null;
             telemetry.addData("ERROR", "Bucket Motor not detected ):");
         }
-        try {
-            conveyerBelt = hardwareMap.dcMotor.get("converyer belt");
-        } catch (Exception p_exception) {
-            conveyerBelt = null;
-            telemetry.addData("ERROR", "Conveyer Belt Motor not detected ):");
-        }
+        // Optical Distance Sensor
+        //Not sure if it is needed in our robot pending from the hardware team
         try {
             ODS = hardwareMap.opticalDistanceSensor.get("ODS");
-        } catch (Exception p_exception) {
+        }
+        catch (Exception p_exception) {
             ODS = null;
             telemetry.addData("ERROR", "ODS is not detected ):");
         }
+        // Touch Sensor
+        //Not sure if it is needed in our robot pending from the hardware team
         try {
             touch = hardwareMap.touchSensor.get("touch");
-        } catch (Exception p_exception) {
+        }
+        catch (Exception p_exception) {
             touch = null;
             telemetry.addData("Error", "Touch is not detected ):");
         }
@@ -120,11 +141,11 @@ public class TCHS10318Hardware extends OpMode {
     public void start ()
     {
         //
-        // Only actions that are common to all Op-Modes (i.e. both automatic and
+        // Only actions that are in common to all our Op-Modes (ex. both automatic and
         // manual) should be implemented here.
         //
-        // This method is designed to be overridden.
-        //
+        // This method is is empty right now
+        // It is designed to be overridden in other OpModes that extend the hardware opmode
     }
     @Override
     public void loop (){
@@ -132,6 +153,24 @@ public class TCHS10318Hardware extends OpMode {
     }
     @Override
     public void telemetry_update ( ) {
-
+        telemetry.addData("left drive stick" , +gamepad1.left_stick_y);
+        telemetry.addData("right drive stick" , +gamepad1.right_stick_y);
+        //telemetry.addData ("touch sensor", ac_touch.isPressed());
+        // telemetry.addData ("Optical Distance", ac_ods.getLightDetected());
+        //telemetry.addData ("Color.Red", +ac_color.red());
+        //telemetry.addData ("Color.Green", +ac_color.green());
+        //telemetry.addData ("Color.Blue", +ac_color.blue());
+    }
+    public void set_drive_power (double lt , double rt){
+        leftMotor.setPower (lt);
+        rightMotor.setPower (rt);
+        leftBackMotor.setPower (lt);
+        rightBackMotor.setPower (rt);
+    }
+    public synchronized void runningon(){
+        c++;
+    }
+    public synchronized void runningoff(){
+        c--;
     }
 }
