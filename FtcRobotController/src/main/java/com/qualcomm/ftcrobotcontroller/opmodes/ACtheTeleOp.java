@@ -6,10 +6,10 @@ package com.qualcomm.ftcrobotcontroller.opmodes;
 public class ACtheTeleOp  extends ACtheHardware {
     @Override
     public void loop() {
-        ac_motorleft.setPower (gamepad1.left_stick_y);
-        ac_motorright.setPower (gamepad1.right_stick_y);
-        ac_motorbkleft.setPower (gamepad1.left_stick_y);
-        ac_motorbkright.setPower(gamepad1.right_stick_y);
+        ac_motorleft.setPower (-1*gamepad1.left_stick_y);
+        ac_motorright.setPower (-1*gamepad1.right_stick_y);
+        ac_motorbkleft.setPower (-1*gamepad1.left_stick_y);
+        ac_motorbkright.setPower(-1*gamepad1.right_stick_y);
         //if (gamepad2.a){
         //    ac_servo.setPosition (Servo.MAX_POSITION);
         //}
