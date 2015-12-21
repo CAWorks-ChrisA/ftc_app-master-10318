@@ -14,10 +14,10 @@ public class TCHS10318Hardware extends OpMode {
     DcMotor rightMotor;
     DcMotor leftBackMotor;
     DcMotor rightBackMotor;
-    DcMotor conveyerBelt;
-    DcMotor bucket;
-    OpticalDistanceSensor ODS;
-    TouchSensor touch;
+    //DcMotor conveyerBelt;
+    //DcMotor bucket;
+    //OpticalDistanceSensor ODS;
+    //TouchSensor touch;
     Servo servo1;
     Servo servo2;
     Servo servo3;
