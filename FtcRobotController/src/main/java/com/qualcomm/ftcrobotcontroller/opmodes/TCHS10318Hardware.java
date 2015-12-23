@@ -5,7 +5,7 @@ import com.qualcomm.robotcore.hardware.DcMotor;
 import com.qualcomm.robotcore.hardware.OpticalDistanceSensor;
 import com.qualcomm.robotcore.hardware.Servo;
 import com.qualcomm.robotcore.hardware.TouchSensor;
-
+//shows the sdk that we are importing
 /**
  * Created by Wesley Chou on 12/9/2015.
  */
@@ -14,9 +14,9 @@ public class TCHS10318Hardware extends OpMode {
     DcMotor rightMotor;
     DcMotor leftBackMotor;
     DcMotor rightBackMotor;
-    //DcMotor conveyerBelt;
-    //DcMotor bucket;
-    //OpticalDistanceSensor ODS;
+    DcMotor debrisbelt;
+    DcMotor debriscollect;
+    //OpticalDistanceSensor ODS;  no more sensors so commenting it out
     //TouchSensor touch;
     Servo servo1;
     Servo servo2;
@@ -51,15 +51,15 @@ public class TCHS10318Hardware extends OpMode {
             telemetry.addData("ERROR", " right back motor not detected  ):  ");
         }
         try {
-            bucket = hardwareMap.dcMotor.get("motorleft");
+            debrisbelt = hardwareMap.dcMotor.get("motorleft");
         } catch (Exception p_exeception) {
-            bucket = null;
+            debrisbelt = null;
             telemetry.addData("ERROR", " bucket not detected  ):  ");
         }
         try {
-            conveyerBelt = hardwareMap.dcMotor.get("motorleft");
+            debriscollect = hardwareMap.dcMotor.get("motorleft");
         } catch (Exception p_exeception) {
-            conveyerBelt = null;
+            debriscollect = null;
             telemetry.addData("ERROR", " convyerbelt not detected  ):  ");
         }
         try {
