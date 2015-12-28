@@ -2,6 +2,7 @@ package com.qualcomm.ftcrobotcontroller.opmodes;
 
 import com.qualcomm.robotcore.eventloop.opmode.OpMode;
 import com.qualcomm.robotcore.hardware.DcMotor;
+import com.qualcomm.robotcore.hardware.Servo;
 
 /**
  * Created by Administrator on 2015/10/28.
@@ -19,7 +20,8 @@ public class ACtheHardware  extends OpMode{
      //OpticalDistanceSensor ac_ods;
      //TouchSensor ac_touch;
      //ColorSensor ac_color;
-     //Servo ac_servo;
+     Servo ac_leftservo;
+     Servo ac_rightservo;
      //DcMotor ac_flipper;
      public static synchronized int running(){return c;}
     public static int c;
@@ -72,13 +74,20 @@ public class ACtheHardware  extends OpMode{
         //    ac_color = null;
         //    telemetry.addData ("Error", "color not detected  ):  ");
         //}
-       // try {
-       //     ac_servo = hardwareMap.servo.get ("servo");
-       // }
-       // catch (Exception p_exception){
-       //     ac_servo =  null;
-       //     telemetry.addData ("Error", "servo not detected ):");
-       // }
+        try {
+            ac_leftservo = hardwareMap.servo.get ("servo1");
+        }
+        catch (Exception p_exception){
+            ac_leftservo =  null;
+            telemetry.addData ("Error", "left servo not detected ):");
+        }
+        try {
+            ac_rightservo = hardwareMap.servo.get ("servo2");
+        }
+        catch (Exception p_exception){
+            ac_rightservo =  null;
+            telemetry.addData ("Error", "right servo not detected ):");
+        }
         try{
             ac_debrislift = hardwareMap.dcMotor.get("lift");
         }
@@ -101,6 +110,9 @@ public class ACtheHardware  extends OpMode{
 
         ac_motorleft.setDirection(DcMotor.Direction.REVERSE);
         ac_motorbkleft.setDirection(DcMotor.Direction.REVERSE);
+        ac_leftservo.setDirection(Servo.Direction.REVERSE);
+        ac_leftservo.setPosition(0.4);
+        ac_rightservo.setPosition(0.4);
 
 
     }
