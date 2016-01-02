@@ -15,14 +15,17 @@ public class ACtheHardware  extends OpMode{
      DcMotor ac_motorright;
      DcMotor ac_motorbkleft;
      DcMotor ac_motorbkright;
-     DcMotor ac_debrislift;
-     DcMotor ac_debrisdump;
+
      //OpticalDistanceSensor ac_ods;
      //TouchSensor ac_touch;
      //ColorSensor ac_color;
      Servo ac_leftservo;
      Servo ac_rightservo;
-     //DcMotor ac_flipper;
+     DcMotor ac_bucket;
+    DcMotor ac_climberdropper;
+    DcMotor ac_conveyerbelt;
+    Servo ac_continuous;
+     int state;
      public static synchronized int running(){return c;}
     public static int c;
 
@@ -88,24 +91,34 @@ public class ACtheHardware  extends OpMode{
             ac_rightservo =  null;
             telemetry.addData ("Error", "right servo not detected ):");
         }
+
+
         try{
-            ac_debrislift = hardwareMap.dcMotor.get("lift");
+            ac_bucket = hardwareMap.dcMotor.get("bucket");
         }
         catch (Exception p_exception){
-            ac_debrislift = null;
+            ac_bucket = null;
         }
+
         try{
-            ac_debrisdump = hardwareMap.dcMotor.get("dump");
+            ac_climberdropper = hardwareMap.dcMotor.get("climberdropper");
         }
         catch (Exception p_exception){
-            ac_debrisdump = null;
+            ac_climberdropper = null;
         }
-        //try{
-        //    ac_flipper = hardwareMap.dcMotor.get("flipper");
-        //}
-        //catch (Exception p_exception){
-        //    ac_flipper = null;
-        //}
+        try{
+            ac_conveyerbelt = hardwareMap.dcMotor.get("conveyerbelt");
+        }
+        catch (Exception p_exception){
+            ac_conveyerbelt = null;
+        }
+        try{
+            ac_continuous = hardwareMap.servo.get("continuous");
+        }
+        catch (Exception p_exception){
+            ac_continuous = null;
+        }
+
 
 
         ac_motorleft.setDirection(DcMotor.Direction.REVERSE);
@@ -132,6 +145,11 @@ public class ACtheHardware  extends OpMode{
     public void loop() {
         //nothing here.
 
+    }
+    public void drop_climbers(){
+         if (this.time>18.3 && this.time<= 18.3){
+
+        }
     }
     @Override public void stop ()
     {
