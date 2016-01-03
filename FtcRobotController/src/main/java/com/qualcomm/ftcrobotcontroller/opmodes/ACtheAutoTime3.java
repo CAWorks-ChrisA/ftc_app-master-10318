@@ -18,12 +18,12 @@ public class ACtheAutoTime3 extends ACtheHardware{
         else if (this.time>12.75 && this.time<= 13.55){
             set_drive_power(0.6, -0.6);
         }
-        else if (this.time>13.55 && this.time<= 16.8){
+        else if (this.time>13.55 && this.time<= 16.9){
             set_drive_power(-1.0, -1.0);
         }
-        else if (this.time>16.8 && this.time<= 17.04){
+        /*else if (this.time>16.8 && this.time<= 17.04){
             drop_climbers();
-        }
+        }*/
         else if (this.time>17.04 && this.time<= 20.29){
             set_drive_power(1.0, 1.0);
         }

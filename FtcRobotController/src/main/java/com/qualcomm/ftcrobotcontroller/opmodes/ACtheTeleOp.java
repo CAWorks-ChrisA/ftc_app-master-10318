@@ -23,23 +23,33 @@ public class ACtheTeleOp  extends ACtheHardware {
             ac_rightservo.setPosition (0.7);
         }
         if (gamepad2.a){
-            ac_conveyerbelt.setPower (1.0);
-        }
-        else if (gamepad2.b){
+           ac_conveyerbelt.setPower (1.0);
+      }
+       else if (gamepad2.b){
             ac_conveyerbelt.setPower (-1);
         }
         else {
             ac_conveyerbelt.setPower(0);
         }
         if (gamepad2.x){
-            ac_bucket.setPower(1);
+            ac_bucket.setPower(0.2);
         }
         else if (gamepad2.y){
-            ac_bucket.setPower(-1);
+            ac_bucket.setPower(-0.2);
         }
         else{
             ac_bucket.setPower(0);
+       }
+      /*  if (gamepad2.dpad_down){
+            ac_climberdropper.setPower(0.2);
         }
+        else if (gamepad2.dpad_up){
+            ac_climberdropper.setPower(-0.2);
+        }
+        else{
+            ac_climberdropper.setPower(0);
+        }
+        */
 
         telemetry_update();
     }
