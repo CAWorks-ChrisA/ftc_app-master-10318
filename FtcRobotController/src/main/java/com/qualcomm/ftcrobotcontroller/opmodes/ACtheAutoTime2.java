@@ -14,30 +14,30 @@ public class ACtheAutoTime2 extends ACtheHardware{
         //goes for Right Hill
 
         if (this.time > 9 && this.time<= 12.75 ) {
-            set_drive_power(1.0, 1.0);
-        }
-        else if (this.time>12.75 && this.time<= 13.55){
-            set_drive_power(-0.6, 0.6);
-        }
-        else if (this.time>13.55 && this.time<= 17.3){
-            set_drive_power(1.0, 1.0);
-        }
-        else if (this.time>17.3 && this.time<= 20.3){
-            drop_climbers();
-        }
-        else if (this.time>20.3 && this.time<= 24.05){
             set_drive_power(-1.0, -1.0);
         }
-        else if (this.time>24.05 && this.time <= 24.45){
+        else if (this.time>12.75 && this.time<= 13.55){
+            set_drive_power(-0.6,0.6);
+        }
+        else if (this.time>13.55 && this.time<= 16.8){
+            set_drive_power(-1.0, -1.0);
+        }
+        else if (this.time>16.8 && this.time<= 17.04){
+            drop_climbers();
+        }
+        else if (this.time>17.04 && this.time<= 20.29){
+            set_drive_power(1.0, 1.0);
+        }
+        else if (this.time>20.29 && this.time <= 20.69){
             set_drive_power(0.6,-0.6);
         }
-        else if(this.time>24.45 && this.time <= 25.05){
-            set_drive_power(-1.0,-1.0);
+        else if(this.time>20.69 && this.time <= 21.29){
+            set_drive_power(1.0,1.0);
         }
-        else if(this.time>25.05 && this.time<= 25.85){
-            set_drive_power (0.6, -0.6);
+        else if(this.time>21.29 && this.time<= 22.09){
+            set_drive_power (-0.6, 0.6);
         }
-        else if (this.time>25.85 && this.time<= 30){
+        else if (this.time>22.09 && this.time<= 30){
             set_drive_power(1.0, 1.0);
         }
         else {

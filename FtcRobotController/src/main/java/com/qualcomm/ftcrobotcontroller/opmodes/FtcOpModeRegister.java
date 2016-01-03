@@ -57,22 +57,23 @@ public class FtcOpModeRegister implements OpModeRegister {
 
     manager.register("NullOp", NullOp.class);
 
-    manager.register("K9TeleOp", K9TeleOp.class);
-    manager.register ("PushBotAuto", PushBotAuto.class);
-    manager.register ("PushBotManual", PushBotManual.class);
-    manager.register ("ACtheTest", ACtheTest.class);
-    manager.register ("ACtheServo" , ACtheServo.class);
-    manager.register ("ACtheIRSensor" , ACtheIRSensor.class);
-    manager.register ("ACtheMotor" , ACtheMotor.class);
-    manager.register ("ACtheAutonomous", ACtheAutonomous.class);
+    //manager.register("K9TeleOp", K9TeleOp.class);
+    //manager.register ("PushBotAuto", PushBotAuto.class);
+    //manager.register ("PushBotManual", PushBotManual.class);
+    //manager.register ("ACtheTest", ACtheTest.class);
+    //manager.register ("ACtheServo" , ACtheServo.class);
+    //manager.register ("ACtheIRSensor" , ACtheIRSensor.class);
+    //manager.register ("ACtheMotor" , ACtheMotor.class);1
+    //manager.register ("ACtheAutonomous", ACtheAutonomous.class);
     manager.register ("ACtheTeleOp", ACtheTeleOp.class);
-    manager.register ("ACtheSensors", ACtheSensors.class);
-    manager.register ("ACtheContinuoustest", ACtheContinuoustest.class);
+    //manager.register ("ACtheSensors", ACtheSensors.class);
+    //manager.register ("ACtheContinuoustest", ACtheContinuoustest.class);
     manager.register ("Autonomous Left Side Left Hill ", ACtheAutoTime.class);
     manager.register ("Autonomous Left Side Right Hill", ACtheAutoTime2.class);
     manager.register ("Autonomous Right Side Right Hill", ACtheAutoTime3.class);
     manager.register ("Autonomous Right Side Left Hill", ACtheAutoTime4.class);
     manager.register ("ACtheAutoTest", ACtheAutoTest.class);
+    manager.register ("ACtheAutoTest2", ACtheAutoTest2.class);
 
 
     /*

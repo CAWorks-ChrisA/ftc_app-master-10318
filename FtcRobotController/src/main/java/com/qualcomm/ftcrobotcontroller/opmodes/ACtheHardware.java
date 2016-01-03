@@ -101,7 +101,7 @@ public class ACtheHardware  extends OpMode{
         }
 
         try{
-            ac_climberdropper = hardwareMap.dcMotor.get("climberdropper");
+            ac_climberdropper = hardwareMap.dcMotor.get("climber");
         }
         catch (Exception p_exception){
             ac_climberdropper = null;
@@ -147,9 +147,16 @@ public class ACtheHardware  extends OpMode{
 
     }
     public void drop_climbers(){
-         if (this.time>18.3 && this.time<= 18.3){
+         if (this.time>16.8 && this.time<= 16.92){
+             ac_climberdropper.setPower(-1);
 
         }
+        else if (this.time>16.92 && this.time<= 17.04){
+            ac_climberdropper.setPower(1);
+        }
+        else {
+             ac_climberdropper.setPower(0);
+         }
     }
     @Override public void stop ()
     {
