@@ -40,11 +40,23 @@ public class ACtheTeleOp  extends ACtheHardware {
         else{
             ac_bucket.setPower(0);
        }
+        if (gamepad1.dpad_up){
+            set_drive_power(-0.5,-0.5);
+        }
+        else if (gamepad1.dpad_down){
+            set_drive_power(0.5,0.5);
+        }
+        else if (gamepad1.dpad_left){
+            set_drive_power(-0.5, 0.5);
+        }
+        else if (gamepad1.dpad_right){
+            set_drive_power(0.5, -0.5);
+        }
       /*  if (gamepad2.dpad_down){
-            ac_climberdropper.setPower(0.2);
+            ac_climberdropper.setPower(0.1);
         }
         else if (gamepad2.dpad_up){
-            ac_climberdropper.setPower(-0.2);
+            ac_climberdropper.setPower(-0.1);
         }
         else{
             ac_climberdropper.setPower(0);

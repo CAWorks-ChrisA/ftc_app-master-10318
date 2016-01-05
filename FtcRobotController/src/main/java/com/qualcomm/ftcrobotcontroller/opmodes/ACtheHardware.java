@@ -147,11 +147,10 @@ public class ACtheHardware  extends OpMode{
     }
  //   public void drop_climbers(){
  //       if (this.time>16.8 && this.time<= 16.92){
- //            ac_climberdropper.setPower(1);
-///
+ //            ac_climberdropper.setPower(0.1)
  //      }
  //      else if (this.time>16.92 && this.time<= 16.98){
- //           ac_climberdropper.setPower(-1);
+ //           ac_climberdropper.setPower(-0.1);
   //      }
   //      else {
   //           ac_climberdropper.setPower(0);}
