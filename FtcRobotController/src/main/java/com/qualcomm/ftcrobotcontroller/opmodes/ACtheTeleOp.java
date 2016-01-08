@@ -52,7 +52,7 @@ public class ACtheTeleOp  extends ACtheHardware {
         else if (gamepad1.dpad_right){
             set_drive_power(0.5, -0.5);
         }
-      /*  if (gamepad2.dpad_down){
+        if (gamepad2.dpad_down){
             ac_climberdropper.setPower(0.1);
         }
         else if (gamepad2.dpad_up){
@@ -61,7 +61,7 @@ public class ACtheTeleOp  extends ACtheHardware {
         else{
             ac_climberdropper.setPower(0);
         }
-        */
+
 
         telemetry_update();
     }

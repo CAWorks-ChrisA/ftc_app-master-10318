@@ -22,7 +22,7 @@ public class ACtheHardware  extends OpMode{
      Servo ac_leftservo;
      Servo ac_rightservo;
      DcMotor ac_bucket;
-    //DcMotor ac_climberdropper;
+    DcMotor ac_climberdropper;
     DcMotor ac_conveyerbelt;
     //Servo ac_continuous;
      int state;
@@ -99,12 +99,12 @@ public class ACtheHardware  extends OpMode{
         catch (Exception p_exception){
             ac_bucket = null;
         }
-        //try{
-        //    ac_climberdropper = hardwareMap.dcMotor.get("climber");
-        //}
-        //catch (Exception p_exception){
-        //    ac_climberdropper = null;
-       //}
+        try{
+            ac_climberdropper = hardwareMap.dcMotor.get("climber");
+        }
+        catch (Exception p_exception){
+            ac_climberdropper = null;
+       }
         try{
             ac_conveyerbelt = hardwareMap.dcMotor.get("conveyerbelt");
         }
@@ -145,16 +145,16 @@ public class ACtheHardware  extends OpMode{
         //nothing here.
 
     }
- //   public void drop_climbers(){
- //       if (this.time>16.8 && this.time<= 16.92){
- //            ac_climberdropper.setPower(0.1)
- //      }
- //      else if (this.time>16.92 && this.time<= 16.98){
- //           ac_climberdropper.setPower(-0.1);
-  //      }
-  //      else {
-  //           ac_climberdropper.setPower(0);}
-  //  }
+    public void drop_climbers(){
+       if (this.time>16.8 && this.time<= 16.92){
+             ac_climberdropper.setPower(1);
+       }
+       else if (this.time>16.92 && this.time<= 16.98){
+            ac_climberdropper.setPower(-1);
+       }
+        else {
+             ac_climberdropper.setPower(0);}
+    }
     @Override public void stop ()
     {
         //

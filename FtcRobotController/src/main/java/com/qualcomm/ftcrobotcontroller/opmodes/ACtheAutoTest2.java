@@ -1,13 +1,12 @@
 package com.qualcomm.ftcrobotcontroller.opmodes;
 
-import com.qualcomm.robotcore.eventloop.opmode.OpMode;
-import com.qualcomm.robotcore.hardware.DcMotor;
-
 /**
  * Created by TCHS Robotics on 12/9/2015.
  */
 public class ACtheAutoTest2 extends ACtheHardware {
-DcMotor ac_climberdropper;
+    //fwd: 21 inch per second, 3.6 second to 6ft
+    //turning: full speed .72 second (0.8 in case)
+
     //@Override
     //public void init() {
 //ac_climberdropper = hardwareMap.dcMotor.get("climber");
@@ -22,11 +21,17 @@ DcMotor ac_climberdropper;
         else if(this.time > 5 && this.time<= 5.12)
         {
             telemetry.addData("02:", "code02");
-            ac_climberdropper.setPower (-1);
+
+        }
+        else if (this.time >5.12 && this.time<= 8.52){
+            set_drive_power(-1,-1);
+        }
+        else if (this.time >8.52 && this.time<= 9.32){
+            set_drive_power(-1,1);
         }
         else {
             telemetry.addData("program:", "ended");
-            ac_climberdropper.setPower(0);
+            set_drive_power(0,0);
         }
         telemetry.addData("dah", "time: " + Double.toString(this.time));
 
