@@ -20,7 +20,7 @@ public class TCHS10318Hardware extends OpMode {
     Servo rightlever;
     //Servo servo3;
     //Servo servo4;
-    // we are no longer using servo 3/4. and sensors/ encoders due to hardware issues and technical dificulties 
+    // we are no longer using servo 3/4. and sensors/ encoders due to hardware issues and technical dificulties
     // defining the hardware on our robot also, we have varibles to name the motors, sensors, and servos.
     @Override
     public void init() {
