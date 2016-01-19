@@ -16,12 +16,11 @@ public class TCHS10318Hardware extends OpMode {
     DcMotor rightBackMotor;
     DcMotor debrisbelt;
     DcMotor debriscollect;
-    //OpticalDistanceSensor ODS;  no more sensors so commenting it out
-    //TouchSensor touch;
-    Servo servo1;
-    Servo servo2;
-    Servo servo3;
-    Servo servo4;
+    Servo leftlever;
+    Servo rightlever;
+    //Servo servo3;
+    //Servo servo4;
+    // we are no longer using servo 3/4. and sensors/ encoders due to hardware issues and technical dificulties 
     // defining the hardware on our robot also, we have varibles to name the motors, sensors, and servos.
     @Override
     public void init() {
@@ -63,55 +62,17 @@ public class TCHS10318Hardware extends OpMode {
             telemetry.addData("ERROR", " convyerbelt not detected  ):  ");
         }
         try {
-            servo1 = hardwareMap.servo.get("servo1");
+            leftlever = hardwareMap.servo.get("servo1");
         } catch (Exception p_exception) {
-            servo1 = null;
-            telemetry.addData("ERROR", "servo1 not detected ): ");
+            leftlever = null;
+            telemetry.addData("ERROR", "leftlever not detected ): ");
         }
         try {
-            servo2 = hardwareMap.servo.get("servo2");
+            rightlever = hardwareMap.servo.get("servo2");
         } catch (Exception p_exception) {
-            servo2 = null;
-            telemetry.addData("ERROR", "servo2 not detected ): ");
+            rightlever = null;
+            telemetry.addData("ERROR", "left lever not detected ): ");
         }
-        try {
-            servo3 = hardwareMap.servo.get("servo3");
-        } catch (Exception p_exception) {
-            servo3 = null;
-            telemetry.addData("ERROR", "servo3 not detected ): ");
-
-        }
-        try {
-            servo4 = hardwareMap.servo.get("servo 4");
-        } catch (Exception p_exception) {
-            servo4 = null;
-            telemetry.addData("ERROR", "servo4 not detected ):");
-        }
-        try {
-            bucket = hardwareMap.dcMotor.get("bucket motor");
-        } catch (Exception p_exception) {
-            bucket = null;
-            telemetry.addData("ERROR", "Bucket Motor not detected ):");
-        }
-        try {
-            conveyerBelt = hardwareMap.dcMotor.get("converyer belt");
-        } catch (Exception p_exception) {
-            conveyerBelt = null;
-            telemetry.addData("ERROR", "Conveyer Belt Motor not detected ):");
-        }
-        try {
-            ODS = hardwareMap.opticalDistanceSensor.get("ODS");
-        } catch (Exception p_exception) {
-            ODS = null;
-            telemetry.addData("ERROR", "ODS is not detected ):");
-        }
-        try {
-            touch = hardwareMap.touchSensor.get("touch");
-        } catch (Exception p_exception) {
-            touch = null;
-            telemetry.addData("Error", "Touch is not detected ):");
-        }
-
 
         if (leftMotor != null){leftMotor.setDirection(DcMotor.Direction.REVERSE);}
         if (rightBackMotor != null){rightBackMotor.setDirection(DcMotor.Direction.REVERSE);}
