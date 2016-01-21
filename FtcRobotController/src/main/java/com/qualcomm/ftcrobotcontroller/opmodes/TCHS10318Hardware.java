@@ -87,6 +87,6 @@ public class TCHS10318Hardware extends OpMode {
 
     @Override
     public void loop() {
-        
+
     }
 }
