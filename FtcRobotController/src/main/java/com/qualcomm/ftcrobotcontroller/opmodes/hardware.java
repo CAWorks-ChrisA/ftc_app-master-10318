@@ -27,6 +27,9 @@ public class hardware extends OpMode {
     Servo right;
     //bucket
     DcMotor bucket;
+    // cont servo
+    Servo servo;
+
 
     @Override
     public void init() {
@@ -47,6 +50,9 @@ public class hardware extends OpMode {
 
         //bucket
         bucket = hardwareMap.dcMotor.get("bucket");
+        //servo
+       servo = hardwareMap.servo.get("servo");
+
 
     }
 
@@ -61,4 +67,6 @@ public class hardware extends OpMode {
         backLeft.setPower(left);
         backRight.setPower(right);
     }
+
+
 }
