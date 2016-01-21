@@ -12,6 +12,7 @@ public class teleoptest extends OpMode{
     DcMotor bkleft;
     DcMotor bkright;
     int state;
+    int state2;
     @Override
     public void init() {
         left = hardwareMap.dcMotor.get("left");
@@ -41,6 +42,27 @@ public class teleoptest extends OpMode{
                         right.setPower(1);
                         bkleft.setPower(1);
                         right.setPower(1);
+                    }
+                    else {
+                        state++;
+                    }
+                    break;
+                default:
+                    break;
+            }
+        }
+        if (gamepad1.b){
+            switch (state2){
+                case 0:
+                    resetStartTime();
+                    state++;
+                    break;
+                case 1:
+                    if (this.time >=1 && this.time <= 2) {
+                        left.setPower(1);
+                        right.setPower(-1);
+                        bkleft.setPower(1);
+                        right.setPower(-1);
                     }
                     else {
                         state++;
