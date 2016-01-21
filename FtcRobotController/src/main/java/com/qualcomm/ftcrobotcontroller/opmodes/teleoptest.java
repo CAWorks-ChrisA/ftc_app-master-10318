@@ -46,6 +46,8 @@ public class teleoptest extends OpMode{
                         state++;
                     }
                     break;
+                default:
+                    break;
             }
         }
 
