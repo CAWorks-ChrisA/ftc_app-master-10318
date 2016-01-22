@@ -1,9 +1,16 @@
 package com.qualcomm.ftcrobotcontroller.opmodes;
 
-/**
- * Created by TCHS Robotics on 1/19/2016.
+import com.qualcomm.robotcore.hardware.DcMotor;
+
+/*
+ * Created by TCHS Robotics on 1/19/2REST16.
  */
 public class Teleop extends hardware {
+    @Override
+    public void init() {
+        super.init();
+    }
+
     @Override
     public void loop() {
         //front is away from the bucket
@@ -32,7 +39,8 @@ public class Teleop extends hardware {
         }
 
         if (gamepad2.dpad_right) {
-            belt.setPower(ANTICLOCKWISE);
+            belt.setDirection(DcMotor.Direction.REVERSE);
+            belt.setPower(CLOCKWISE);
         }
 
         //servos left side
@@ -56,14 +64,26 @@ public class Teleop extends hardware {
         //dunk master
 
         if (gamepad2.dpad_up){
-            servo.setPosition(1);
+            climber.setPosition(ANTICLOCKWISE);
         }
         else if (gamepad2.dpad_down){
-            servo.setPosition(-1);
+            climber.setPosition(CLOCKWISE);
         }
         else {
-            servo.setPosition(0);
+            climber.setPosition(REST);
         }
 
+        //bucket
+        if (gamepad1.a) {
+            bucket.setPower(CLOCKWISE);
+        } else {
+            bucket.setPower(REST);
+        }
+
+        if (gamepad1.b) {
+            bucket.setPower(ANTICLOCKWISE);
+        } else {
+            bucket.setPower(REST);
+        }
     }
 }

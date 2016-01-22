@@ -20,6 +20,11 @@ public class auto extends hardware{
     }
 
     @Override
+    public void init() {
+        super.init();
+    }
+
+    @Override
     public void loop() {
         switch (state){
             case 0:

@@ -4,7 +4,7 @@ import com.qualcomm.robotcore.eventloop.opmode.OpMode;
 import com.qualcomm.robotcore.hardware.DcMotor;
 import com.qualcomm.robotcore.hardware.Servo;
 
-/**
+/*
  * TCHS ROBOTICS TEAM 10318
  * RAMROID HARDWARE CLASS
  */
@@ -13,8 +13,9 @@ public class hardware extends OpMode {
 
     //variable declaration
     //rotation constants
-    final static double ANTICLOCKWISE = 1;
-    final static double CLOCKWISE = -1;
+    final static double ANTICLOCKWISE = -1;
+    final static double CLOCKWISE = 1;
+    final static double REST = 0;
     //driving:
     DcMotor frontLeft;
     DcMotor frontRight;
@@ -27,8 +28,8 @@ public class hardware extends OpMode {
     Servo right;
     //bucket
     DcMotor bucket;
-    // cont servo
-    Servo servo;
+    //climbers
+    Servo climber ;
 
 
     @Override
@@ -51,7 +52,7 @@ public class hardware extends OpMode {
         //bucket
         bucket = hardwareMap.dcMotor.get("bucket");
         //servo
-       servo = hardwareMap.servo.get("servo");
+        climber = hardwareMap.servo.get("climber");
 
 
     }
