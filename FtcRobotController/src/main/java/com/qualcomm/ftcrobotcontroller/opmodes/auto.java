@@ -34,7 +34,7 @@ public class auto extends hardware{
             case 1:
 
                 if (this.time > inittime && this.time<= desttime){//forward for 1 sec
-                    set_drive_power(0.5,0.5);
+                    set_drive_power(-0.5,-0.5);
                 }
                 else {
 
