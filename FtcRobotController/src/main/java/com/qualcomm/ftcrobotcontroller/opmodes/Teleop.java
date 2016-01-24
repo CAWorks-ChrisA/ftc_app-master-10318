@@ -1,15 +1,13 @@
 package com.qualcomm.ftcrobotcontroller.opmodes;
 
 import com.qualcomm.robotcore.hardware.DcMotor;
+import com.qualcomm.robotcore.hardware.Servo;
 
 /*
  * Created by TCHS Robotics on 1/19/2REST16.
  */
 public class Teleop extends hardware {
-    @Override
-    public void init() {
-        super.init();
-    }
+
 
     @Override
     public void loop() {
@@ -35,12 +33,15 @@ public class Teleop extends hardware {
 
         //belt
         if (gamepad2.dpad_left) {
-            belt.setPower(CLOCKWISE);
+            belt.setPower(ANTICLOCKWISE);
         }
 
-        if (gamepad2.dpad_right) {
-            belt.setDirection(DcMotor.Direction.REVERSE);
+        else if (gamepad2.dpad_right) {
+
             belt.setPower(CLOCKWISE);
+        }
+        else {
+            belt.setPower(REST);
         }
 
         //servos left side
@@ -48,7 +49,7 @@ public class Teleop extends hardware {
             left.setPosition(0.2);//up
         }
 
-        if (gamepad2.b) {
+        else if (gamepad2.b) {
             left.setPosition(0.7);//down
         }
 
@@ -57,33 +58,40 @@ public class Teleop extends hardware {
             right.setPosition(0.2);//up
         }
 
-        if (gamepad2.y) {
+        else if (gamepad2.y) {
             right.setPosition(0.7);//down
         }
 
         //dunk master
 
-        if (gamepad2.dpad_up){
-            climber.setPosition(ANTICLOCKWISE);
+        if (gamepad2.dpad_down){
+
+            climber.setPosition(1);
         }
-        else if (gamepad2.dpad_down){
-            climber.setPosition(CLOCKWISE);
+        else if (gamepad2.dpad_up){
+
+            climber.setPosition(0);
         }
         else {
-            climber.setPosition(REST);
+            climber.setPosition(0.5);
         }
 
         //bucket
         if (gamepad1.a) {
-            bucket.setPower(CLOCKWISE);
-        } else {
+            bucket.setPower(0.5);
+        }
+
+        else if (gamepad1.b) {
+            bucket.setPower(-0.5);
+        }
+        else {
             bucket.setPower(REST);
         }
 
-        if (gamepad1.b) {
-            bucket.setPower(ANTICLOCKWISE);
-        } else {
-            bucket.setPower(REST);
-        }
+        // tape if needed
+        /*
+        tape.setPower(0.5 * gamepad2.left_stick_y)
+        turn.setPower(0.2 * gamepad2.right_stick_y)
+         */
     }
 }

@@ -30,6 +30,9 @@ public class hardware extends OpMode {
     DcMotor bucket;
     //climbers
     Servo climber ;
+    // tape turning and controls
+    DcMotor turn;
+    DcMotor tape;
 
 
     @Override
@@ -47,12 +50,22 @@ public class hardware extends OpMode {
 
         //servos
         left = hardwareMap.servo.get("left");
+        left.setPosition(0.8);
         right = hardwareMap.servo.get("right");
+        right.setPosition(0.8);
 
         //bucket
         bucket = hardwareMap.dcMotor.get("bucket");
         //servo
         climber = hardwareMap.servo.get("climber");
+        //tape, if needed
+        /*
+        tape = hardwareMap.dcMotor.get("tape")
+        turn = hardwareMap.dcMotor.get("turn")
+
+         */
+
+
 
 
     }

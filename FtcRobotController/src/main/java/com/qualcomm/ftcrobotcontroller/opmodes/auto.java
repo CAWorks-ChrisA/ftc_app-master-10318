@@ -7,7 +7,7 @@ public class auto extends hardware{
     int state = 0;
     static final double fwdtime = 1;
     static final double turntime = 0;
-    double desttime = 1;
+    double desttime = 4;
     double inittime = 0;
     public void forward(){
         desttime = inittime + fwdtime;//sets next dest time according to current
@@ -34,7 +34,7 @@ public class auto extends hardware{
             case 1:
 
                 if (this.time > inittime && this.time<= desttime){//forward for 1 sec
-                    set_drive_power(1,1);
+                    set_drive_power(0.5,0.5);
                 }
                 else {
 
@@ -43,7 +43,7 @@ public class auto extends hardware{
                     state++;
                 }
                 break;
-            case 2:
+            /*case 2:
 
                 if (this.time > inittime && this.time <= desttime) {//backward for 1 sec
                     set_drive_power(0, 0);
@@ -65,8 +65,9 @@ public class auto extends hardware{
                     forward();
                     state++;
                 }
-                break;
+                break;*/
             default:
+                set_drive_power(0,0);
                 telemetry.addData("ugh", "program stopped");
                 break;
 
