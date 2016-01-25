@@ -52,12 +52,14 @@ public class hardware extends OpMode {
         left = hardwareMap.servo.get("left");
         left.setPosition(0.8);
         right = hardwareMap.servo.get("right");
+        right.setDirection(Servo.Direction.REVERSE);
         right.setPosition(0.8);
 
         //bucket
         bucket = hardwareMap.dcMotor.get("bucket");
         //servo
         climber = hardwareMap.servo.get("climber");
+        climber.setPosition(1);
         //tape, if needed
         /*
         tape = hardwareMap.dcMotor.get("tape")

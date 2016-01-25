@@ -50,7 +50,7 @@ public class Teleop extends hardware {
         }
 
         else if (gamepad2.b) {
-            left.setPosition(0.7);//down
+            left.setPosition(0.8);//down
         }
 
         //servos right side
@@ -59,7 +59,7 @@ public class Teleop extends hardware {
         }
 
         else if (gamepad2.y) {
-            right.setPosition(0.7);//down
+            right.setPosition(0.8);//down
         }
 
         //dunk master
@@ -78,11 +78,11 @@ public class Teleop extends hardware {
 
         //bucket
         if (gamepad1.a) {
-            bucket.setPower(0.5);
+            bucket.setPower(0.2);
         }
 
         else if (gamepad1.b) {
-            bucket.setPower(-0.5);
+            bucket.setPower(-0.2);
         }
         else {
             bucket.setPower(REST);
