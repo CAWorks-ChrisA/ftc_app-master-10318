@@ -2,13 +2,27 @@ apply plugin: 'com.android.application'
 
 android {
     signingConfigs {
+        ACG {
+            keyAlias 'ACG'
+            keyPassword 'acthegreat'
+            storeFile file('C:/Users/Administrator/ACG.jks')
+            storePassword 'acthegreat'
+        }
     }
     defaultConfig {
         minSdkVersion 16
         targetSdkVersion 19
+        applicationId 'x'
+        versionCode 1
+        versionName 'ACG V1'
+        testApplicationId '1'
+        testInstrumentationRunner 'ACG'
+        signingConfig signingConfigs.ACG
     }
     compileSdkVersion 19
     buildToolsVersion '21.1.2'
+    productFlavors {
+    }
 }
 
 buildscript {
